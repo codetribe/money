@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @sheet.name
+%p
+  %b Currency:
+  = @sheet.currency
+%p
+  %b Sheet:
+  = @sheet.sheet
+
+= link_to 'Edit', edit_sheet_path(@sheet)
+\|
+= link_to 'Back', sheets_path
