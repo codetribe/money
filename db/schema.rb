@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506125946) do
+ActiveRecord::Schema.define(:version => 20130506132517) do
 
   create_table "records", :force => true do |t|
     t.text     "description"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130506125946) do
     t.boolean  "pending"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.datetime "time"
   end
 
   create_table "sheets", :force => true do |t|

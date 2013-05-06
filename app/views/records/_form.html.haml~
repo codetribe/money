@@ -18,8 +18,5 @@
   .field
     = f.label :pending
     = f.check_box :pending
-  .field
-    = f.label :time
-    = f.datetime_select :time
   .actions
     = f.submit 'Save'
