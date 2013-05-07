@@ -6,19 +6,19 @@ class Sheet < ActiveRecord::Base
   validates :currency, :name, presence: true
   
   def income
-    self.records.where(pending: false, income: true).sum(:amount)
+    records.where(pending: false, income: true).sum(:amount)
   end
   
   def expense
-    self.records.where(pending: false, income: false).sum(:amount)
+    records.where(pending: false, income: false).sum(:amount)
   end
   
   def pending_income
-    self.records.where(pending: true, income: true).sum(:amount)
+    records.where(pending: true, income: true).sum(:amount)
   end
   
   def pending_expense
-    self.records..where(pending: true, income: false).sum(:amount)
+    records.where(pending: true, income: false).sum(:amount)
   end
   
   def balance

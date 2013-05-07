@@ -1,5 +1,5 @@
 %tr
-  %td Finances
+  %td=sheet.name
   %td
     =sheet.currency
     =sheet.income
@@ -22,6 +22,6 @@
     \/-
   %td
     =link_to "View", sheet, class: "btn btn-mini"
-    =link_to "Edit", "#", class: "btn btn-mini"
-    =link_to "Delete", "#", class: "btn btn-mini"
+    =link_to "Edit", edit_sheet_path(sheet), class: "btn btn-mini"
+    =link_to "Delete", sheet, method: :delete, class: "btn btn-mini", confirm: "Do you really want to delete #{sheet.name}"
 

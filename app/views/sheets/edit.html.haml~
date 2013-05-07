@@ -1,6 +1,4 @@
-%h1
-  Editing sheet
-  =@sheet.name
+%h1 Editing sheet
 
 = render 'form'
 
