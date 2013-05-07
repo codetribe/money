@@ -13,7 +13,7 @@
     = f.label :currency
     = f.text_field :currency
   .field
-    = f.label :sheet_id
-    = f.text_field :sheet_id
+    = f.label :sheet
+    = f.text_field :sheet
   .actions
     = f.submit 'Save'

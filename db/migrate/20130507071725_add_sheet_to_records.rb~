@@ -1,0 +1,5 @@
+class AddSheetToRecords < ActiveRecord::Migration
+  def change
+    add_column :records, :sheet, :references
+  end
+end

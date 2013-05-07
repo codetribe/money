@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506132517) do
+ActiveRecord::Schema.define(:version => 20130507071725) do
 
   create_table "records", :force => true do |t|
     t.text     "description"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(:version => 20130506132517) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.datetime "time"
+    t.integer  "sheet_id"
   end
+
+  add_index "records", ["sheet_id"], :name => "index_records_on_sheet_id"
 
   create_table "sheets", :force => true do |t|
     t.string   "name"

@@ -1,6 +1,6 @@
 .row-fluid
   .span3=render partial: 'search_form'
-  .span3=link_to "New Sheet", new_sheet_path, class: "btn btn-primary"
+  .span3=link_to "New Sheet", new_sheet_path, class: "btn btn-primary"l
 
 %table.table
   %thead

@@ -6,4 +6,8 @@
       %th Type
       %th Amount
   %tbody
-    =render @records
+    %tr
+      %td Verkadalai urundai
+      %td 2013-04-28 11:45 PM
+      %td Expense
+      %td Rs 5 /-

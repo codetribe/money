@@ -1,0 +1,27 @@
+%tr
+  %td=sheet.name
+  %td
+    =sheet.currency
+    =sheet.income
+    \/-
+  %td
+    =sheet.currency
+    =sheet.expense
+    \/-
+  %td
+    =sheet.currency
+    =sheet.pending_income
+    \/-
+  %td
+    =sheet.currency
+    =sheet.pending_expense
+    \/-
+  %td
+    =sheet.currency
+    =sheet.balance
+    \/-
+  %td
+    =link_to "View", sheet, class: "btn btn-mini"
+    =link_to "Edit", "#", class: "btn btn-mini"
+    =link_to "Delete", "#", class: "btn btn-mini"
+
