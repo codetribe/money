@@ -14,8 +14,14 @@ class Record < ActiveRecord::Base
     string
   end
   
-  def type=num
-    self.income = num ^ 1
-    self.pending = num ^ 2
+  def typenum=num
+    self.income = (num ^ 1) > 0
+    self.pending = (num ^ 2) > 0
+  end
+
+  def typenum
+    number = 0
+    number += self.income ? 1 : 0
+    number += self.pending ? 2 : 0
   end
 end
