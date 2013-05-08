@@ -8,16 +8,23 @@
 
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_area :description, class: "decent"
   .field
     = f.label :amount
     = f.text_field :amount
-  .field
-    = f.label :income
-    = f.check_box :income
-  .field
-    = f.label :pending
-    = f.check_box :pending
+  .radios_inline
+    
+    = f.radio_button :typenum, 1
+    = f.label :typenum, "Income"
+    
+    = f.radio_button :typenum, 0
+    = f.label :typenum, "Expense"
+    
+    = f.radio_button :typenum, 3
+    = f.label :typenum, "Pending Income"
+    
+    = f.radio_button :typenum, 2
+    = f.label :typenum, "Pending Expense"
   .field
     = f.label :time
     = f.datetime_select :time
@@ -25,4 +32,4 @@
     = f.label :sheet_id
     = f.text_field :sheet_id
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn"

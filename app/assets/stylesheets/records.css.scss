@@ -1,3 +1,19 @@
 // Place all the styles related to the records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea.decent{
+	height: 60px;
+	width: 350px;
+}
+
+form.new_record, form.edit_record{
+	select{
+	 width: 9em;
+	}
+	div.radios_inline{
+		label{
+			display: inline;
+		}
+	}
+}

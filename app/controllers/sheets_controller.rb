@@ -73,10 +73,10 @@ class SheetsController < ApplicationController
   # DELETE /sheets/1.json
   def destroy
     @sheet = Sheet.find(params[:id])
+    sheet_name = @sheet.name
     @sheet.destroy
-
     respond_to do |format|
-      format.html { redirect_to sheets_url }
+      format.html { redirect_to :back, notice: "Sheet #{sheet_name} was deleted!"}
       format.json { head :no_content }
     end
   end

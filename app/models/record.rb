@@ -23,5 +23,6 @@ class Record < ActiveRecord::Base
     number = 0
     number += self.income ? 1 : 0
     number += self.pending ? 2 : 0
+    number
   end
 end
