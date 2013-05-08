@@ -35,6 +35,7 @@ class RecordsController < ApplicationController
   # GET /records/1/edit
   def edit
     @record = Record.find(params[:id])
+    @sheet_id = @record.sheet.id
   end
 
   # POST /records
@@ -44,7 +45,7 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to @record, notice: 'Record was successfully created.' }
+        format.html { redirect_to @record.sheet, notice: 'Record was successfully created.' }
         format.json { render json: @record, status: :created, location: @record }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.update_attributes(params[:record])
-        format.html { redirect_to @record, notice: 'Record was successfully updated.' }
+        format.html { redirect_to @record.sheet, notice: 'Record was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

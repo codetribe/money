@@ -1,7 +1,7 @@
 class Sheet < ActiveRecord::Base
   belongs_to :sheet
   has_many :sheets, dependent: :destroy
-  has_many :records, dependent: :destroy
+  has_many :records, dependent: :destroy, order: 'time desc'
   attr_accessible :currency, :name, :sheet_id
   validates :currency, :name, presence: true
   

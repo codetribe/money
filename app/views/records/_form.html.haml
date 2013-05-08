@@ -1,4 +1,4 @@
-= form_for @record do |f|
+= form_for(@record, class: "form-horizontal") do |f|
   - if @record.errors.any?
     #error_explanation
       %h2= "#{pluralize(@record.errors.count, "error")} prohibited this record from being saved:"
@@ -12,24 +12,31 @@
   .field
     = f.label :amount
     = f.text_field :amount
-  .radios_inline
+  
+  .row-fluid
+    .span1
+      %label.radio
+        = f.radio_button :typenum, Record::Income
+        Income
+
+    .span1
+      %label.radio
+        = f.radio_button :typenum, Record::Expense
+        Expense
+
+    .span1
+      %label.radio
+        = f.radio_button :typenum, Record::Pending_income
+        Pending Income
     
-    = f.radio_button :typenum, 1
-    = f.label :typenum, "Income"
-    
-    = f.radio_button :typenum, 0
-    = f.label :typenum, "Expense"
-    
-    = f.radio_button :typenum, 3
-    = f.label :typenum, "Pending Income"
-    
-    = f.radio_button :typenum, 2
-    = f.label :typenum, "Pending Expense"
+    .span1
+      %label.radio
+        = f.radio_button :typenum, Record::Pending_expense
+        Pending Expense
   .field
     = f.label :time
     = f.datetime_select :time
   .field
-    = f.label :sheet_id
     = f.text_field :sheet_id
   .actions
     = f.submit 'Save', class: "btn"

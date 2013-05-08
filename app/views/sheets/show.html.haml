@@ -1,3 +1,26 @@
+.row-fluid
+  .span2
+    %b Income
+    %br
+    = @sheet.income
+  .span2
+    %b Expense
+    %br
+    = @sheet.expense
+  .span2
+    %b Pending Income
+    %br
+    = @sheet.pending_income
+  .span2
+    %b Pending Expense
+    %br
+    = @sheet.pending_expense
+  .span2
+  .span2
+    %b Balance
+    %br
+    = @sheet.balance
+
 %table.table
   %thead
     %tr
@@ -5,5 +28,6 @@
       %th Date - Time
       %th Type
       %th Amount
+      %th Action
   %tbody
     =render @records

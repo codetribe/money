@@ -4,7 +4,7 @@ class Record < ActiveRecord::Base
   Pending_income = 3
   Pending_expense = 2
   
-  attr_accessible :amount, :description, :income, :pending, :sheet_id, :time
+  attr_accessible :amount, :description, :sheet_id, :time, :typenum
   validates :amount, :description, presence: true
   belongs_to :sheet
   
@@ -15,8 +15,9 @@ class Record < ActiveRecord::Base
   end
   
   def typenum=num
-    self.income = (num ^ 1) > 0
-    self.pending = (num ^ 2) > 0
+    num = num.to_i
+    self.income = (num & 1) > 0
+    self.pending = (num & 2) > 0
   end
 
   def typenum
@@ -24,5 +25,9 @@ class Record < ActiveRecord::Base
     number += self.income ? 1 : 0
     number += self.pending ? 2 : 0
     number
+  end
+
+  def currency
+    sheet.currency
   end
 end
