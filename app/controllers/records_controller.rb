@@ -25,7 +25,7 @@ class RecordsController < ApplicationController
   # GET /records/new.json
   def new
     @record = Record.new
-
+    @sheet_id = params[:sheet_id]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @record }

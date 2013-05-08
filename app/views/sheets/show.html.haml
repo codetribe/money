@@ -1,25 +1,30 @@
 .row-fluid
-  .span2
-    %b Income
-    %br
-    = link_to @sheet.income, income_sheet_path(@sheet)
-  .span2
-    %b Expense
-    %br
-    = link_to @sheet.expense, expense_sheet_path(@sheet)
-  .span2
-    %b Pending Income
-    %br
-    = link_to @sheet.pending_income, pending_income_sheet_path(@sheet)
-  .span2
-    %b Pending Expense
-    %br
-    = link_to @sheet.pending_expense, pending_expense_sheet_path(@sheet)
-  .span2
-  .span2
-    %b Balance
-    %br
-    = link_to @sheet.balance, @sheet
+  .well
+    .span2
+      %b Income
+      %br
+      = link_to @sheet.income, income_sheet_path(@sheet)
+    .span2
+      %b Expense
+      %br
+      = link_to @sheet.expense, expense_sheet_path(@sheet)
+    .span2
+      %b Pending Income
+      %br
+      = link_to @sheet.pending_income, pending_income_sheet_path(@sheet)
+    .span2
+      %b Pending Expense
+      %br
+      = link_to @sheet.pending_expense, pending_expense_sheet_path(@sheet)
+    .span2
+    .span2
+      %b Balance
+      %br
+      = link_to @sheet.balance, @sheet
+
+.row-fluid
+  .span3=render partial: 'search_form'
+  .span3=link_to "New Record", {action: :new, controller: :records, sheet_id: @sheet.id}, class: "btn btn-primary"
 
 %table.table
   %thead
