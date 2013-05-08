@@ -2,7 +2,14 @@ Money::Application.routes.draw do
   resources :records
 
 
-  resources :sheets
+  resources :sheets do
+    member do
+      get 'income'
+      get 'expense'
+      get 'pending_income'
+      get 'pending_expense'
+    end
+  end
 
 
   # The priority is based upon order of creation:

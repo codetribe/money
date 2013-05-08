@@ -80,4 +80,28 @@ class SheetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def income
+    @sheet = Sheet.find(params[:id])
+    @records = @sheet.records.where(pending: false, income: true)
+    render :show
+  end
+
+  def expense
+    @sheet = Sheet.find(params[:id])
+    @records = @sheet.records.where(pending: false, income: false)
+    render :show
+  end
+
+  def pending_income
+    @sheet = Sheet.find(params[:id])
+    @records = @sheet.records.where(pending: true, income: true)
+    render :show
+  end
+
+  def pending_expense
+    @sheet = Sheet.find(params[:id])
+    @records = @sheet.records.where(pending: true, income: false)
+    render :show
+  end
 end

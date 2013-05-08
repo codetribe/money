@@ -2,24 +2,24 @@
   .span2
     %b Income
     %br
-    = @sheet.income
+    = link_to @sheet.income, income_sheet_path(@sheet)
   .span2
     %b Expense
     %br
-    = @sheet.expense
+    = link_to @sheet.expense, expense_sheet_path(@sheet)
   .span2
     %b Pending Income
     %br
-    = @sheet.pending_income
+    = link_to @sheet.pending_income, pending_income_sheet_path(@sheet)
   .span2
     %b Pending Expense
     %br
-    = @sheet.pending_expense
+    = link_to @sheet.pending_expense, pending_expense_sheet_path(@sheet)
   .span2
   .span2
     %b Balance
     %br
-    = @sheet.balance
+    = link_to @sheet.balance, @sheet
 
 %table.table
   %thead
