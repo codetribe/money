@@ -1,4 +1,6 @@
 class SheetsController < ApplicationController
+  before_filter :ransack_object_init
+
   # GET /sheets
   # GET /sheets.json
   def index
@@ -103,5 +105,16 @@ class SheetsController < ApplicationController
     @sheet = Sheet.find(params[:id])
     @records = @sheet.records.where(pending: true, income: false)
     render :show
+  end
+
+  def search
+    @sheets = @q.result
+    render :index
+  end
+
+  private
+
+  def ransack_object_init
+     @q = Sheet.search(params[:q])
   end
 end

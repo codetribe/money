@@ -1,5 +1,5 @@
 .row-fluid
-  .well
+  .well.bottom_pad50
     .span2
       %b Income
       %br
@@ -23,7 +23,7 @@
       = link_to @sheet.balance, @sheet
 
 .row-fluid
-  .span3=render partial: 'search_form'
+  .span4=render partial: 'search_form'
   .span3=link_to "New Record", {action: :new, controller: :records, sheet_id: @sheet.id}, class: "btn btn-primary"
 
 %table.table

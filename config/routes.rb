@@ -9,6 +9,10 @@ Money::Application.routes.draw do
       get 'pending_income'
       get 'pending_expense'
     end
+
+    collection do
+      get 'search'
+    end
   end
 
 

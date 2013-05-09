@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+/*
+.bottom_pad50{
+	padding-bottom: 50px;
+}
+*/
