@@ -1,5 +1,6 @@
 class SheetsController < ApplicationController
-  before_filter :ransack_object_init
+  before_filter :ransack_object_init, only: [:index, :search]
+  before_filter :record_ransack_object_init, only:[:show, :income, :expense, :pending_income, :pending_expense, :record_search]
 
   # GET /sheets
   # GET /sheets.json
@@ -112,9 +113,19 @@ class SheetsController < ApplicationController
     render :index
   end
 
+  def record_search
+    @sheet = Sheet.find(params[:id])
+    @records = @q.result.where(sheet_id: @sheet.id)
+    render :show
+  end
+
   private
 
   def ransack_object_init
      @q = Sheet.search(params[:q])
+  end
+
+  def record_ransack_object_init
+    @q = Record.search(params[:q])
   end
 end
